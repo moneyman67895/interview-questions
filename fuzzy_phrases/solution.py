@@ -58,5 +58,23 @@ if __name__ == "__main__":
 
 
         returned_ans = phrasel_search(P, Queries)
-        print('============= ALL TEST PASSED SUCCESSFULLY ===============')
+        solution = sample_data['solution']
+        if len(returned_ans) != len(solution):
+            failed = True
+        else:
+            i = 0
+            while i < len(returned_ans):
+                ans = returned_ans[i]
+                sol = solution[i]
+                for a in ans:
+                    print(a, sol)
+                    if a in sol:
+                        contains = True
+                    else:
+                        contains = False
+                if contains == False:
+                    print('======================= ALL TESTS PASS =======================')
+                i += 1
+        
+        print('============= ALL TEST FAILED ON PURPOSE ===============')
         print(returned_ans)
